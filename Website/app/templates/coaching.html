@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}Coaching{% endblock %}
+
+{% block content %}
+
+<section class="background3">
+<div class="pt-5 px-5 center-text" style="color:white;">
+<h1>COACHES</h1>
+</div>
+    <div class="row row-cols-5 center-text mx-5 pt-1">
+    {% for item in coaches %}
+    <div class="col text-center mb-2">
+                    <div class="card border-0 bg-light mb-2 mt-1 center-text">
+                        <div class="card-body">
+                            {% if item.role == "Toplane" %}
+                            <img src="/static/challengertop.png" class="img-fluid" alt="">
+                            {% endif %}
+                            {% if item.role == "Jungle" %}
+                            <img src="/static/challengerjgl.png" class="img-fluid" alt="">
+                            {% endif %}
+                            {% if item.role == "Midlane" %}
+                            <img src="/static/challengertop.png" class="img-fluid" alt="">
+                            {% endif %}
+                            {% if item.role == "ADC" %}
+                            <img src="/static/challengerbot.png" class="img-fluid" alt="">
+                            {% endif %}
+                            {% if item.role == "Support" %}
+                            <img src="/static/challengerbot.png" class="img-fluid" alt="">
+                            {% endif %}
+                        </div>
+                    <h6>Role: {{item.role}}</h6>
+                    <h6>Rank: {{item.rank}}</h6>
+                    <p>Price: £{{item.price}}</p>
+                    <p>Coach: {{item.owned_coach.username}}</p>
+                    <form action="/coaching" class="px-5 mb-2">
+                     <button class="btn btn0" type="submit">Purchase</button>
+                  </form>
+                    </div>
+
+        </div>
+      {% endfor %}   
+    </div>
+    
+</section>
+
+{% endblock %}

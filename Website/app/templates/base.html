@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/styles.css">
+    
+    <title>{% block title %}Home{% endblock %}</title>
+
+  </head>
+  
+  <body>
+  
+  <nav class="navbar navbar-expand-lg navbar-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">League Accounts</a>
+    <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" 
+    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
+    aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="/accounts">Accounts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/coaching">Coaching</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact">FAQ</a>
+        </li>
+      </ul>
+     {% if user.is_authenticated %}
+     <a class="px-3 pt-1" href="/profile">Welcome, {{ user.username }}</a>
+     <form action="/logout" class="d-flex px-2 mb-2">      
+      <button class="btn btn0" type="submit" >Log Out</button>
+      </form>
+      {% if user.username == "Admin" %}
+        <form action="/additem2" class="d-flex px-2 mb-2">      
+          <button class="btn btn0" type="submit" >Account+</button>
+        </form>
+        <form action="/additem" class="d-flex px-2 mb-2">      
+          <button class="btn btn0" type="submit" >Coach+</button>
+        </form>
+      {% endif %}
+      {% else %}
+      <form action="/signup" class="d-flex px-2 mb-2">      
+      <button class="btn btn0" type="submit">Sign Up</button>
+      </form>
+      <form action="/login" class="d-flex px-2 mb-2">
+      <button class="btn btn0" type="submit">Login</button>
+      </form>
+      {% endif %}
+ 
+    </div>
+  </div>
+</nav>
+
+    {% with messages = get_flashed_messages(with_categories=true) %} 
+    {% if messages %} 
+    {% for category, message in messages %} 
+    {% if category == 'error' %}
+    <div class="alert alert-danger alter-dismissable fade show" role="alert">
+      {{ message }}
+      <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    {% else %}
+    <div class="alert alert-success alter-dismissable fade show" role="alert">
+      {{ message }}
+      <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    {% endif %} 
+    {% endfor %} 
+    {% endif %} 
+    {% endwith %}
+
+{% block content %}
+{% endblock %}
+
+
+
+  
+  
+  <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+  </body>
+</html>

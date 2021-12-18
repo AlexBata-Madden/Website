@@ -1,0 +1,142 @@
+
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<section class="main">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7 pt-5 text-center">
+                <h1 class="pt-5">Instant Hand Leveled Accounts</h1>
+                     <form action="/accounts">      
+                          <button class="btn1 mt-3">Buy an Account</button>
+                      </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="new">
+    <div class="container py-5">
+        <div class="row pt-5">
+            <div class="col-lg-7 m-auto pt-5 text-center">
+                <div class="row text-center">
+                    <div class="col-lg-4">
+                        <img src="https://img.icons8.com/ios/50/000000/stopwatch.png" class="img-fluid" alt="">
+                        <h6>Instant Delivery</h6>
+                    </div>
+                    <div class="col-lg-4">
+                        <img src="https://img.icons8.com/ios/50/000000/unlock.png" class="img-fluid" alt="">
+                        <h6>Secure Accounts</h6>
+                    </div>
+                    <div class="col-lg-4">
+                        <img src="https://img.icons8.com/ios/50/000000/filled-message.png" class="img-fluid" alt="">
+                        <h6>Email and Password Changable</h6>
+                    </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="new">
+    <div class="container py-5">
+        <div class="row pt-5">
+            <div class="col-lg-5 m-auto pt-5 text-center"">
+                <h1>What's Trending</h1>
+                <h6>Most Common Purchases</h6>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 text-center mb-2">
+                    <div class="card border-0 bg-light mb-2">
+                        <div class="card-body">
+                            <img src="/static/euwlvl30.png" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                    <h6>Level 30 EU West Account</h6>
+                    <p>£4.99</p>
+                </div>
+                <div class="col-lg-3 text-center">
+                    <div class="card border-0 bg-light mb-2">
+                        <div class="card-body">
+                            <img src="/static/euwlvl40.png" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                    <h6>Level 40 EU West Account</h6>
+                    <p>£6.99</p>
+                </div>
+                <div class="col-lg-3 text-center">
+                    <div class="card border-0 bg-light mb-2">
+                        <div class="card-body">
+                            <img src="/static/nalvl30.png" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                    <p>Level 30 North America Account</p>
+                    <p>£4.99</p>
+                </div>
+                <div class="col-lg-3 text-center">
+                    <div class="card border-0 bg-light mb-2">
+                        <div class="card-body">
+                            <img src="/static/nalvl40.png" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                    <h6>Level 40 North America Account</h6>
+                    <p>£6.99</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <form action="/accounts">      
+            <div class="col-lg-6 text-center m-auto">
+                <button class="btn1">Click For More</button>
+            </div>
+            </form>
+
+        </div>
+    </div>
+</section>
+
+
+<section class="about">
+    <div class="container py-5">
+        <div class="row py-5">
+            <div class="col-lg-8 m-auto text-center">
+                <h1 class="pt-5">Coaching</h1>
+                <h6>From players best in their roles</h6>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 text-center m-auto">
+                    <img src="/static/challengertop.png" class="img-fluid mb-3" alt"">
+                    <h6>Challenger Toplaner</h6>
+                    <p>£15/hour</p>
+                </div>
+                <div class="col-lg-4 text-center m-auto">
+                    <img src="/static/challengerbot.png" class="img-fluid mb-3" alt"">
+                    <h6>Challenger Botlaner</h6>
+                    <p>£15/hour</p>
+
+                </div>
+                <div class="col-lg-4 text-center m-auto">
+                    <img src="/static/challengerjgl.png" class="img-fluid mb-3" alt"">
+                    <h6>Challenger Jungler</h6>
+                    <p>£15/hour</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <form action="/coaching">      
+            <div class="col-lg-6 text-center m-auto">
+                <button class="btn1">Click For More</button>
+            </div>
+            </form>
+        </div>  
+</section> 
+
+<section class="background2 py-2 px-2">
+    <a href="https://icons8.com/icon/186/stopwatch">Stopwatch icon by Icons8</a>
+    <br>
+    <a href="https://icons8.com/icon/152/padlock">Padlock icon by Icons8</a>
+    <br>
+    <a href="https://icons8.com/icon/63598/envelope">Envelope icon by Icons8</a>
+</section>
+{% endblock %}
